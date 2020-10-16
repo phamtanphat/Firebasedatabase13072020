@@ -11,4 +11,12 @@ public class Vehicle {
 
     public Vehicle() {
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", numwheel=" + numwheel +
+                '}';
+    }
 }
