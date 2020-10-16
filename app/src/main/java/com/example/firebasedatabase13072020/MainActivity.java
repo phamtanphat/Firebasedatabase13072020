@@ -52,16 +52,21 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
         // 3 : Lưu dạng object
-        Vehicle bicycle = new Vehicle("Bicycle",2);
-        myRef.child("Vehicle").setValue(bicycle).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Thất bại", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        Vehicle bicycle = new Vehicle("Bicycle",2);
+//        myRef.child("Vehicle").setValue(bicycle).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if (task.isSuccessful()){
+//                    Toast.makeText(MainActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(MainActivity.this, "Thất bại", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+        // 4 : Lưu dạng mảng object
+        myRef.child("Course").push().setValue(new Course("Lập trình Android","Java,Kotlin"));
+        myRef.child("Course").push().setValue(new Course("Lập trình Php","Php"));
+        myRef.child("Course").push().setValue(new Course("Lập trình Ios","Swift"));
+
     }
 }
